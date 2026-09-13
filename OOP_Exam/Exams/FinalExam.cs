@@ -2,7 +2,7 @@ using OOP_Exam.Answers;
 
 namespace OOP_Exam.Exams;
 
-public class FinalExam:Exam {
+public class FinalExam:Exam, ICloneable {
     public override void PrintTitle() {
         Console.WriteLine("=============Final Exam==========");
     }
@@ -16,6 +16,10 @@ public class FinalExam:Exam {
         }
         double ratio = (double)userMarks/totalMarks;
         Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks} [{ratio:P1}].");
+    }
+
+    object ICloneable.Clone() {
+        return MemberwiseClone();
     }
 
 }
