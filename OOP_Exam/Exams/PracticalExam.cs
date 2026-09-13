@@ -1,5 +1,7 @@
 namespace OOP_Exam.Exams;
 
-public class PracticalExam {
-    
+public class PracticalExam:Exam {
+    public override void PrintTitle() {
+        Console.WriteLine("=============Practical Exam==============");
+    }
 }
