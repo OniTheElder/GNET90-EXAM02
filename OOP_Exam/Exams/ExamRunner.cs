@@ -7,7 +7,7 @@ public static class ExamRunner {
             Console.WriteLine($"Question #{i + 1}: {exam.Questions[i]}");
             Console.WriteLine($"Correct Answer: {exam.Questions[i].CorrectAnswer}- {exam.Questions[i].Answers[exam.Questions[i].CorrectAnswer-1].AnswerText}");
             Console.WriteLine($"Your Answer: {userAnswers[i]}- {exam.Questions[i].Answers[userAnswers[i]-1].AnswerText}");
-            Console.WriteLine($"Verdict: {(userAnswers[i] ==  exam.Questions[i].CorrectAnswer?"Correct!": "False")}");
+            Console.WriteLine($"Verdict: {(userAnswers[i] ==  exam.Questions[i].CorrectAnswer?"Correct!": "Incorrect:(")}");
             Console.WriteLine("---------------------------");
         }
     }
