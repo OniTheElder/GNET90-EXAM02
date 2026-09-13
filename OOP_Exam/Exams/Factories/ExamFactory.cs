@@ -62,7 +62,7 @@ public static class ExamFactory {
         exam.TimeOfExam = GetTimeOfExam();
         int numberOfQuestions = GetNumberOfQuestions();
         for (int i = 0; i < numberOfQuestions; i++) {
-            exam.Questions.Add(QuestionFactory.CreateTrueOfFalseQuestion());
+            exam.Questions.Add(QuestionFactory.CreateMcqQuestion());
         }
         return exam;
     }
