@@ -1,5 +1,3 @@
-using OOP_Exam.Answers;
-
 namespace OOP_Exam.Exams;
 
 public class FinalExam:Exam {

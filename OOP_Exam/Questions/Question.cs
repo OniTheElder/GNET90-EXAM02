@@ -1,4 +1,3 @@
-using System.Text;
 using OOP_Exam.Answers;
 
 namespace OOP_Exam.Questions;

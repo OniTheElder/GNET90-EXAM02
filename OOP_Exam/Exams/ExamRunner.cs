@@ -1,6 +1,3 @@
-using OOP_Exam.Answers;
-using OOP_Exam.Questions;
-
 namespace OOP_Exam.Exams;
 
 public static class ExamRunner {
