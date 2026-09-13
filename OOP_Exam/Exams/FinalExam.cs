@@ -12,6 +12,11 @@ public class FinalExam:Exam {
             if (userAnswers[i] == Questions[i].CorrectAnswer) userMarks += Questions[i].Mark;
             totalMarks += Questions[i].Mark;
         }
+
+        if (totalMarks == 0) {
+            Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks}");
+            return;
+        }
         double ratio = (double)userMarks/totalMarks;
         Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks} [{ratio:P1}].");
     }
