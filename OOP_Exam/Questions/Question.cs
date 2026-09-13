@@ -9,6 +9,7 @@ public abstract class Question:ICloneable{
     public int CorrectAnswer { get; set; }
     public List<Answer> Answers { get; private set; } = new();
     public abstract int GetChoice();
+    public abstract int GetCorrectAnswer();
 
     public object Clone() {
         Question clonedQuestion = (Question)MemberwiseClone();

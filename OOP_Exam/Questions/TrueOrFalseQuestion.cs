@@ -22,4 +22,18 @@ public class TrueOrFalseQuestion:Question {
         }
         return choice;
     }
+
+    public override int GetCorrectAnswer() {
+        int choice = 0;
+        bool accepted = false;
+        while (!accepted) {
+            Console.Write("Enter the correct answer of the question[1, 2]: ");
+            accepted = int.TryParse(Console.ReadLine(), out choice);
+            if (!accepted || choice < 1 || choice > 2) {
+                Console.WriteLine("Not a valid choice, try again.");
+                accepted = false;
+            }
+        }
+        return choice;
+    }
 }

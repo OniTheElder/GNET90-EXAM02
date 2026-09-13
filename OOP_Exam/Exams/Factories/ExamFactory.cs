@@ -71,7 +71,7 @@ public static class ExamFactory {
         int type = 0;
         bool accepted = false;
         while (!accepted) {
-            Console.Write("Enter Type Of Exam (1 for Final & 2 for Practical: ");
+            Console.Write("Enter Type Of Exam (1 for Final & 2 for Practical): ");
             accepted = int.TryParse(Console.ReadLine(), out type);
             if (!accepted || type < 1 || type > 2) {
                 Console.WriteLine("Not a valid type, try again.");

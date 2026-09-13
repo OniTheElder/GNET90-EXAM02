@@ -2,7 +2,7 @@ namespace OOP_Exam.Exams;
 
 public class FinalExam:Exam {
     public override void PrintTitle() {
-        Console.WriteLine("=============Final Exam==========");
+        Console.WriteLine("=============Final Exam===========");
     }
 
     public override void PrintResults(List<int> userAnswers) {
@@ -14,11 +14,11 @@ public class FinalExam:Exam {
         }
 
         if (totalMarks == 0) {
-            Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks}");
+            Console.WriteLine($"The total mark of the exam is: {userMarks}/{totalMarks}");
             return;
         }
         double ratio = (double)userMarks/totalMarks;
-        Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks} [{ratio:P1}].");
+        Console.WriteLine($"The total mark of the exam is: {userMarks}/{totalMarks} [{ratio:P1}].");
     }
 
     

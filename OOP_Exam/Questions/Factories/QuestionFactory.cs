@@ -36,7 +36,7 @@ public static class QuestionFactory {
 
         Console.WriteLine("-------------------");
         Console.WriteLine(question);
-        question.CorrectAnswer = question.GetChoice();
+        question.CorrectAnswer = question.GetCorrectAnswer();
         Console.WriteLine("-------------------");
         return question;
     }
@@ -51,7 +51,7 @@ public static class QuestionFactory {
         }
         Console.WriteLine("-------------------");
         Console.WriteLine(question);
-        question.CorrectAnswer = question.GetChoice();
+        question.CorrectAnswer = question.GetCorrectAnswer();
         Console.WriteLine("-------------------");
         return question;
     }
