@@ -43,7 +43,7 @@ public static class ExamFactory {
         }
         return type;
     }
-    public static FinalExam CreateFinalExam() {
+    private static FinalExam CreateFinalExam() {
         FinalExam exam = new FinalExam();
         exam.TimeOfExam = GetTimeOfExam();
         int numberOfQuestions = GetNumberOfQuestions();
@@ -57,7 +57,7 @@ public static class ExamFactory {
         }
         return exam;
     }
-    public static PracticalExam CreatePracticalExam() {
+    private static PracticalExam CreatePracticalExam() {
         PracticalExam exam = new PracticalExam();
         exam.TimeOfExam = GetTimeOfExam();
         int numberOfQuestions = GetNumberOfQuestions();
@@ -65,5 +65,20 @@ public static class ExamFactory {
             exam.Questions.Add(QuestionFactory.CreateMcqQuestion());
         }
         return exam;
+    }
+
+    public static Exam CreateExam() {
+        int type = 0;
+        bool accepted = false;
+        while (!accepted) {
+            Console.Write("Enter Type Of Exam (1 for Final & 2 for Practical: ");
+            accepted = int.TryParse(Console.ReadLine(), out type);
+            if (!accepted || type < 1 || type > 2) {
+                Console.WriteLine("Not a valid type, try again.");
+                accepted = false;
+            }
+        }
+        if (type == 1) return CreateFinalExam();
+        return CreatePracticalExam();
     }
 }

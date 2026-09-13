@@ -3,9 +3,9 @@ using OOP_Exam.Subjects;
 namespace OOP_Exam;
 
 class Program {
-    static void Main(string[] args) {
-        Subject Math =  new Subject("Math101", "Mathematics");
-        Math.CreatePracticalExam();
-        ExamRunner.RunPracticalExam(Math.PracticalExam);
+    static void Main() {
+        Subject math =  new Subject("Math101", "Mathematics");
+        math.CreateExam();
+        ExamRunner.RunExam(math.Exam);
     }
 }

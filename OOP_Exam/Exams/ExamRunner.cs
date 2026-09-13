@@ -14,19 +14,9 @@ public static class ExamRunner {
             Console.WriteLine("---------------------------");
         }
     }
-
-    private static void PrintResults(Exam exam , List<int> userAnswers) {
-        int userMarks = 0;
-        int totalMarks = 0;
-        for (int i = 0; i < exam.NumberOfQuestions; ++i) {
-            if (userAnswers[i] == exam.Questions[i].CorrectAnswer) userMarks += exam.Questions[i].Mark;
-            totalMarks += exam.Questions[i].Mark;
-        }
-        double ratio = (double)userMarks/totalMarks;
-        Console.WriteLine($"The total marks of the exam is: {userMarks}/{totalMarks} [{ratio:P1}].");
-    }
-
-    private static void RunExam(Exam exam, List<int> userAnswers) {
+    public static void RunExam(Exam? exam) {
+        if (exam is null) return;
+        List<int> userAnswers = new();
         exam.PrintTitle();
         Console.WriteLine($"The time for the exam is: {exam.TimeOfExam.TotalHours} hr");
         Console.WriteLine("==================================");
@@ -36,18 +26,8 @@ public static class ExamRunner {
             userAnswers.Add(choice);
             Console.WriteLine("---------------------------");
         }
-    }
-    public static void RunFinalExam(FinalExam exam) {
-        List<int> userAnswers = new();
-        RunExam(exam, userAnswers);
         PrintQuestionsAndAnswers(userAnswers, exam);
-        PrintResults(exam, userAnswers);
-    }
-
-    public static void RunPracticalExam(PracticalExam exam) {
-        List<int> userAnswers = new();
-        RunExam(exam, userAnswers);
-        PrintQuestionsAndAnswers(userAnswers, exam);
+        exam.PrintResults(userAnswers);
     }
     
     

@@ -11,12 +11,8 @@ public class Subject {
         SubjectId = subjectId;
         SubjectName = subjectName;
     }
-    public PracticalExam PracticalExam { get; set; }
-    public FinalExam FinalExam { get; set; }
-    public void CreateFinalExam() {
-        FinalExam = ExamFactory.CreateFinalExam();
-    }
-    public void CreatePracticalExam() {
-        PracticalExam = ExamFactory.CreatePracticalExam();
+    public Exam? Exam { get; set; }
+    public void CreateExam() {
+        Exam = ExamFactory.CreateExam();
     }
 }

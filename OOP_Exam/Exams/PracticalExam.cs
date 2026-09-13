@@ -1,7 +1,11 @@
+using OOP_Exam.Answers;
+
 namespace OOP_Exam.Exams;
 
 public class PracticalExam:Exam {
     public override void PrintTitle() {
         Console.WriteLine("=============Practical Exam==============");
     }
+
+    public override void PrintResults(List<int> userAnswers) { }
 }
