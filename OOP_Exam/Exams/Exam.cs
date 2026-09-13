@@ -5,11 +5,16 @@ namespace OOP_Exam.Exams;
 
 public abstract class Exam: ICloneable{
     public TimeSpan TimeOfExam { get; set; }
-    public List<Question> Questions { get; } = new();
+    public List<Question> Questions { get; set; } = new();
     public int NumberOfQuestions =>  Questions.Count;
     public abstract void PrintTitle();
     public abstract void PrintResults(List<int> userAnswers);
     object ICloneable.Clone() {
-        return MemberwiseClone();
+        Exam clonedExam = (Exam)MemberwiseClone();
+        clonedExam.Questions = new List<Question>();
+        foreach (Question question in Questions) {
+            clonedExam.Questions.Add((Question)question.Clone());
+        }
+        return clonedExam;
     }
 }
